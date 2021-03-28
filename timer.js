@@ -4,10 +4,11 @@ const { delay } = require("../../util/util1");
 module.exports = class TimerCommand extends Command {
 	constructor(client) {
 		super(client, {
-			name: 'timer',
-			group: 'misc',
-			memberName: 'timer',
-			description: 'Sets a timer for up to 10 minutes. Usage : \`<time in seconds>\`',
+			name: 'COMMAND_NAME',
+			group: 'COMMAND_GROUP',
+			memberName: 'COMMAND_MEMBER_NAME',
+			description: 'COMMAND_DESCRIPTION`',
+			// args are customizable		
 			args: [
 				{
 					key: 'time',
@@ -24,6 +25,6 @@ module.exports = class TimerCommand extends Command {
 		const display = time > 59 ? `${time / 60} minutes` : `${time} seconds`;
 		await msg.say(`🕰️ Set a timer for **${display}**.`);
 		await delay(time * 1000);
-		return msg.say(`🕰️ Your **${display}** timer is finished ${msg.author}!`);
+		return msg.say(`🕰️ Your **${display}** timer is finished ${msg.author}~!`);
 	}
 };
